@@ -76,7 +76,7 @@ Unofficial, independent AZ-900 learning tool · Not affiliated with Microsoft.
 
 ## 60-second speaking notes
 
-"When I was learning cloud fundamentals, getting a question wrong was not the end of the problem—the hard part was understanding why. Cloudwise is a small, friendly practice space for people preparing for AZ-900. Learners choose one of the three public skills areas, answer original questions, and immediately see a plain-language explanation for every choice. Their progress is saved on their own device and summarized by topic, so they can choose what to practice next. The app is intentionally lightweight: no login, no server, and no copied exam items. We can grow it with more reviewed questions and bring the same explain-first learning loop to other certifications. Cloudwise helps the next learner turn practice into understanding."
+"The moment that inspired Cloudwise was [add a real example from your own AZ-900 preparation: a concept that confused you, an answer you wanted explained, or a study tool you wished you had]. Cloudwise is a small, friendly practice space for people preparing for AZ-900. Learners choose one of the three public skills areas, answer original questions, and immediately see a plain-language explanation for every choice. Their progress is saved on their own device and summarized by topic, so they can choose what to practice next. The app is intentionally lightweight: no login, no server, and no copied exam items. We can grow it with more reviewed questions and bring the same explain-first learning loop to other certifications. Cloudwise helps the next learner turn practice into understanding."
 
 ## Submission checklist
 
@@ -84,5 +84,6 @@ Unofficial, independent AZ-900 learning tool · Not affiliated with Microsoft.
 - [ ] Sign in to Canva and make a copy of the supplied template before editing it.
 - [ ] Replace the placeholder content in that Canva copy with the slide copy above.
 - [ ] Add current screenshots from the running app to the product-demo slide.
+- [ ] Replace the bracketed personal-experience prompt in the speaking notes with a true moment from your own AZ-900 preparation.
 - [ ] Confirm the presentation's unofficial notice is visible.
 - [ ] Submit the repository and presentation link through the PLP hackathon submission form.
