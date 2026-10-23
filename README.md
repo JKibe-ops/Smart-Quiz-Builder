@@ -50,7 +50,7 @@ Questions were checked against the public outline and Microsoft Learn service do
 
 Open the ready-to-present [Cloudwise pitch deck](./pitch-deck.html) in a browser. Navigate with the arrow keys or on-screen controls; use **Print / PDF** to print or save it as a PDF. The full slide copy and speaking notes are in [`PITCH.md`](./PITCH.md).
 
-The supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi) is also linked in `PITCH.md`; use the slide copy there to transfer this presentation into your Canva account.
+The project presentation is also available as an [editable Canva copy](https://www.canva.com/design/DAHY2YOfmsw/oveScBMGzqMs7bOJ_1kW2Q/edit), made from the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). The copy has nine project-focused slides. Add app screenshots and personalize the speaking notes before submitting.
 
 ## License
 

@@ -1,78 +1,68 @@
 # Cloudwise — pitch and demo kit
 
-This file contains project-specific slide copy and a short demo script. A ready-to-present browser deck is available in [`pitch-deck.html`](./pitch-deck.html). To use the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi), replace its placeholder copy with the text below and add screenshots from the working app. Keep the visible unofficial notice in the presentation.
+This file contains project-specific slide copy and a short demo script. A ready-to-present browser deck is available in [`pitch-deck.html`](./pitch-deck.html). The editable [Cloudwise Canva presentation](https://www.canva.com/design/DAHY2YOfmsw/oveScBMGzqMs7bOJ_1kW2Q/edit) is a nine-slide copy of the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). Add screenshots from the working app and personalize the speaking notes before submitting. Keep the visible unofficial notice in the presentation.
 
 ## Slide 1 — Cover
 
 **Cloudwise**
 
-**Make cloud concepts click for real.**
+**Smart Quiz Builder**
 
-An AZ-900 practice quiz that explains every answer.
+AZ-900 practice with instant, clear explanations.
 
-Vibe Coding Hackathon · #1MillionDevs
+- 18 original questions across 3 AZ-900 skill areas.
+- Instant explanations for every answer.
+- Progress by topic, saved on your device.
+- Independent and unofficial; not affiliated with Microsoft.
 
-## Slide 2 — The problem
+## Slide 2 — The learning gap
 
-**Getting an answer right is only half the learning.**
+**Practice should explain why.**
 
-Learners can practice question after question and still be unsure why an answer is correct—or what to revisit after a miss. A score without a clear explanation leaves the hardest part of learning unfinished.
+Learners need more than a score: they need to understand why an answer is right or wrong.
 
-## Slide 3 — Who it's for
+## Slide 3 — The problem
 
-**For first-time cloud learners preparing for AZ-900.**
+**The learning gap**
 
-Especially learners who want a quick, low-pressure practice session, plain-language feedback, and a clear way to see which topic needs another look.
+A score shows the result—not the concept to revisit.
 
-## Slide 4 — The solution
+## Slide 4 — Our solution
 
 **Choose a topic. Answer. Understand why.**
 
-- Practice across the three public AZ-900 skill areas.
-- Get immediate, clear explanations for correct and incorrect answers.
-- See topic accuracy and a practice-based progress snapshot.
-- Start without an account; progress stays in the learner's browser.
+- Choose a topic from the public AZ-900 skills outline.
+- Answer original, focused practice questions.
+- Get an explanation right after every answer.
+- Review topic accuracy and choose what to practice next.
 
 All quiz items are original learning questions, not copied exam questions.
 
-## Slide 5 — Product demo
+## Slide 5 — How it works
 
-1. Open the overview and choose **Practice this topic** on a skill-area card.
-2. Select a short round and begin.
-3. Pick an answer; show the correct choice and the explanation immediately.
-4. Finish the round to show the score and topic summary.
-5. Return to the overview to see progress saved by topic.
+**One question at a time.**
 
-**Suggested screenshots:** overview dashboard, answer feedback after a selection, round results.
+Choose an AZ-900 topic, answer original questions, and get a clear explanation right away. In the live demo, show a topic round, instant feedback, and the round results.
 
-## Slide 6 — Why it helps
+## Slide 6 — Who it's for
 
-**Feedback turns practice into understanding.**
+**Beginners. On-demand. Three AZ-900 skill areas.**
 
-The learner does not have to wait until the end of a test to discover a knowledge gap. Each explanation closes the loop while the question is still fresh. Topic-level progress suggests a useful next step without pretending to predict an exam result.
+- New cloud learners get clear, beginner-friendly explanations.
+- Quick, low-pressure practice fits around a busy study day.
+- Learners can start with a guided round in any of the three skill areas.
 
-## Slide 7 — How it was built
+## Slide 7 — Scale up
 
-**Fast, focused, and browser-first.**
+**Start with AZ-900, then grow this explain-first model to other beginner certifications.**
 
-- Plain HTML, CSS, and JavaScript; no setup, login, or external service required.
-- Original question bank aligned with the public AZ-900 outline.
-- Local browser storage keeps learner progress private to that device.
-- Responsive layout, keyboard-operable controls, and reduced-motion support.
+## Slide 8 — Why Cloudwise?
 
-## Slide 8 — Impact and what comes next
+Unlike score-only practice, every answer explains why and topic progress reveals where to focus.
 
-**A small practice loop can scale to more learning journeys.**
+## Slide 9 — Learning impact
 
-Next steps: expand the original question bank with expert review, add optional spaced review of missed concepts, gather learner feedback, and adapt the same explain-first approach to other entry-level certifications. Any future shared analytics would need clear consent and privacy protections.
-
-## Slide 9 — Close
-
-**Cloudwise: practice that explains.**
-
-Try a round. Learn from every answer.
-
-Unofficial, independent AZ-900 learning tool · Not affiliated with Microsoft.
+Original questions, instant explanations, and topic progress turn practice into a learning loop.
 
 ## 60-second speaking notes
 
@@ -80,10 +70,9 @@ Unofficial, independent AZ-900 learning tool · Not affiliated with Microsoft.
 
 ## Submission checklist
 
-- [ ] Push the app and documentation to the requested GitHub repository.
-- [ ] Sign in to Canva and make a copy of the supplied template before editing it.
-- [ ] Replace the placeholder content in that Canva copy with the slide copy above.
-- [ ] Add current screenshots from the running app to the product-demo slide.
+- [x] Push the app and documentation to the requested GitHub repository.
+- [x] Create and edit a nine-slide Canva copy of the supplied template.
+- [ ] Add current screenshots from the running app to the Canva presentation.
 - [ ] Replace the bracketed personal-experience prompt in the speaking notes with a true moment from your own AZ-900 preparation.
-- [ ] Confirm the presentation's unofficial notice is visible.
+- [x] Confirm the presentation's unofficial notice is visible.
 - [ ] Submit the repository and presentation link through the PLP hackathon submission form.
