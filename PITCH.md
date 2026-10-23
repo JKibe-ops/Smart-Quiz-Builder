@@ -77,4 +77,5 @@ The opening is a worked example from an original Cloudwise question, not a claim
 - [x] Add current screenshots from the running app to the Canva presentation and repository.
 - [x] Replace the speaking-note placeholder with a concrete AZ-900 learning moment from an original app question and explanation.
 - [x] Confirm the presentation's unofficial notice is visible.
+- [x] Create a captioned product walkthrough with a transcript: [Cloudwise video demo](https://jkibe-ops.github.io/Smart-Quiz-Builder/video-demo.html).
 - [ ] Submit the repository and presentation link through the PLP hackathon submission form.

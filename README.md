@@ -6,7 +6,7 @@ Cloudwise is an independent, unofficial AZ-900 practice app built around a simpl
 
 ## Try it
 
-Open `index.html` in a modern browser. No account, API key, build step, or dependency installation is required. To serve it locally, run:
+Open the [live Cloudwise prototype](https://jkibe-ops.github.io/Smart-Quiz-Builder/) or open `index.html` in a modern browser. No account, API key, build step, or dependency installation is required. To serve it locally, run:
 
 ```sh
 npx serve .
@@ -52,6 +52,10 @@ Questions were checked against the public outline and Microsoft Learn service do
 Open the ready-to-present [Cloudwise pitch deck](./pitch-deck.html) in a browser. Navigate with the arrow keys or on-screen controls; use **Print / PDF** to print or save it as a PDF. The full slide copy and speaking notes are in [`PITCH.md`](./PITCH.md).
 
 The project presentation is also available as an [editable Canva copy](https://www.canva.com/design/DAHY2YOfmsw/oveScBMGzqMs7bOJ_1kW2Q/edit), made from the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). The nine-slide copy includes real app screenshots of the overview and instant answer feedback. Captured images are also in `assets/`.
+
+## Video demo
+
+Watch the captioned, 28-second [Cloudwise product walkthrough](https://jkibe-ops.github.io/Smart-Quiz-Builder/video-demo.html) or open [`video-demo.html`](./video-demo.html) locally. The page includes a transcript and a download option.
 
 ## License
 

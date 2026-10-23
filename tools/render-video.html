@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Render Cloudwise demo video</title>
+<style>
+  body { margin: 0; padding: 24px; color: #17213f; background: #f7f6ff; font: 16px system-ui, sans-serif; }
+  button { padding: 12px 18px; border: 0; border-radius: 8px; color: white; background: #6653de; font: inherit; font-weight: 700; cursor: pointer; }
+  button:disabled { opacity: .6; cursor: wait; }
+  p { max-width: 700px; line-height: 1.5; }
+  canvas { display: block; width: min(100%, 960px); margin-top: 16px; border-radius: 10px; background: #15182a; }
+  #status { color: #4e5870; }
+</style>
+<h1>Cloudwise demo video renderer</h1>
+<p>Render the captioned project walkthrough to a browser-supported video file.</p>
+<button id="render">Render and download video</button>
+<p id="status" role="status">Ready.</p>
+<canvas width="1280" height="720" aria-label="Demo video preview"></canvas>
+<script>
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+const status = document.querySelector("#status");
+const button = document.querySelector("#render");
+const scenes = [
+  { duration: 4, title: "Cloudwise", subtitle: "AZ-900 practice that explains every answer", kind: "intro" },
+  { duration: 7, title: "Choose a skills area", subtitle: "Three AZ-900 topics. Progress saved on your device.", image: "../assets/cloudwise-dashboard.png" },
+  { duration: 12, title: "Answer. Understand why.", subtitle: "An original Nairobi startup question teaches consumption-based pricing.", image: "../assets/cloudwise-instant-feedback.png" },
+  { duration: 5, title: "Practice for understanding", subtitle: "Independent and unofficial · Try the quiz at github.com/JKibe-ops/Smart-Quiz-Builder", kind: "outro" }
+];
+const totalSeconds = scenes.reduce((sum, scene) => sum + scene.duration, 0);
+const assets = new Map();
+let imagesReady;
+
+function loadImages() {
+  imagesReady ??= Promise.all(scenes.filter(scene => scene.image).map(scene => new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => { assets.set(scene.image, image); resolve(); };
+    image.onerror = () => reject(new Error(`Could not load ${scene.image}`));
+    image.src = scene.image;
+  })));
+  return imagesReady;
+}
+
+function roundedRect(x, y, width, height, radius) {
+  ctx.beginPath();
+  ctx.roundRect(x, y, width, height, radius);
+}
+
+function drawCover(image, x, y, width, height) {
+  const scale = Math.max(width / image.width, height / image.height);
+  const cropWidth = width / scale;
+  const cropHeight = height / scale;
+  const sx = (image.width - cropWidth) / 2;
+  const sy = Math.max(0, Math.min(image.height - cropHeight, image.height * 0.035));
+  ctx.drawImage(image, sx, sy, cropWidth, cropHeight, x, y, width, height);
+}
+
+function drawScene(scene, localTime, globalTime) {
+  const { width, height } = canvas;
+  const fade = Math.min(1, localTime / 0.55, (scene.duration - localTime) / 0.55);
+  const opacity = Math.max(0, fade);
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = "#171a2d";
+  ctx.fillRect(0, 0, width, height);
+
+  const gradient = ctx.createLinearGradient(0, 0, width, height);
+  gradient.addColorStop(0, "#f3f1ff");
+  gradient.addColorStop(1, "#e4f9f6");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.globalAlpha = opacity;
+  if (scene.image) {
+    const scale = Math.min(1, 0.985 + localTime * 0.002);
+    const imageWidth = 1120 * scale;
+    const imageHeight = 570 * scale;
+    const imageX = (width - imageWidth) / 2;
+    const imageY = 56 + (570 - imageHeight) / 2;
+    ctx.save();
+    ctx.shadowColor = "#29365b26";
+    ctx.shadowBlur = 28;
+    ctx.shadowOffsetY = 12;
+    roundedRect(imageX, imageY, imageWidth, imageHeight, 18);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.restore();
+    ctx.save();
+    roundedRect(imageX, imageY, imageWidth, imageHeight, 18);
+    ctx.clip();
+    drawCover(assets.get(scene.image), imageX, imageY, imageWidth, imageHeight);
+    ctx.restore();
+  } else {
+    ctx.fillStyle = "#6b5be7";
+    ctx.beginPath();
+    ctx.arc(1070, 190, 94, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#17b8b5";
+    ctx.beginPath();
+    ctx.arc(1130, 145, 14, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(1170, 145, 14, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  const captionY = scene.image ? 650 : 470;
+  ctx.fillStyle = "#17213f";
+  ctx.font = "700 38px Segoe UI, Arial, sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText(scene.title, width / 2, captionY);
+  ctx.fillStyle = "#4e5870";
+  ctx.font = "23px Segoe UI, Arial, sans-serif";
+  wrapText(scene.subtitle, width / 2, captionY + 42, 1100, 31);
+
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#6554d9";
+  ctx.font = "700 18px Segoe UI, Arial, sans-serif";
+  ctx.fillText("cloudwise.", 54, 52);
+  ctx.textAlign = "right";
+  ctx.fillStyle = "#64708a";
+  ctx.font = "16px Segoe UI, Arial, sans-serif";
+  ctx.fillText("INDEPENDENT · UNOFFICIAL AZ-900 LEARNING TOOL", width - 54, height - 28);
+  ctx.fillStyle = "#d9dced";
+  roundedRect(54, height - 45, width - 108, 5, 3);
+  ctx.fill();
+  ctx.fillStyle = "#6b5be7";
+  roundedRect(54, height - 45, (width - 108) * (globalTime / totalSeconds), 5, 3);
+  ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function wrapText(text, centerX, baselineY, maxWidth, lineHeight) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let line = "";
+  for (const word of words) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (ctx.measureText(candidate).width > maxWidth && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = candidate;
+    }
+  }
+  if (line) lines.push(line);
+  lines.forEach((entry, index) => ctx.fillText(entry, centerX, baselineY + index * lineHeight));
+}
+
+function drawAt(seconds) {
+  let offset = 0;
+  for (const scene of scenes) {
+    if (seconds < offset + scene.duration) {
+      drawScene(scene, seconds - offset, seconds);
+      return;
+    }
+    offset += scene.duration;
+  }
+  drawScene(scenes[scenes.length - 1], scenes[scenes.length - 1].duration, totalSeconds);
+}
+
+button.addEventListener("click", async () => {
+  if (!("MediaRecorder" in window) || !canvas.captureStream) {
+    status.textContent = "This browser cannot record a video file. Open the project video demo page to view the hosted version.";
+    return;
+  }
+  button.disabled = true;
+  try {
+    await loadImages();
+    drawAt(0);
+    const stream = canvas.captureStream(30);
+    const preferredType = ["video/mp4;codecs=avc1.42E01E", "video/mp4", "video/webm;codecs=vp8", "video/webm;codecs=vp9", "video/webm"]
+      .find(type => MediaRecorder.isTypeSupported(type));
+    const recorder = new MediaRecorder(stream, preferredType ? { mimeType: preferredType, videoBitsPerSecond: 1_500_000 } : undefined);
+    const chunks = [];
+    recorder.addEventListener("dataavailable", event => {
+      if (event.data.size) chunks.push(event.data);
+    });
+    recorder.addEventListener("stop", () => {
+      const blob = new Blob(chunks, { type: recorder.mimeType || "video/webm" });
+      stream.getTracks().forEach(track => track.stop());
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      const extension = recorder.mimeType.startsWith("video/mp4") ? "mp4" : "webm";
+      link.download = `cloudwise-demo.${extension}`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      status.textContent = `Finished. Downloaded ${link.download} (${recorder.mimeType}; ${(blob.size / 1_000_000).toFixed(1)} MB).`;
+      button.disabled = false;
+    }, { once: true });
+    recorder.start(250);
+    const started = performance.now();
+    let frame = 0;
+    const render = now => {
+      const elapsed = Math.min(totalSeconds, (now - started) / 1000);
+      drawAt(elapsed);
+      status.textContent = `Rendering… ${Math.floor((elapsed / totalSeconds) * 100)}%`;
+      if (elapsed < totalSeconds) {
+        frame = requestAnimationFrame(render);
+      } else {
+        cancelAnimationFrame(frame);
+        setTimeout(() => recorder.stop(), 100);
+      }
+    };
+    requestAnimationFrame(render);
+  } catch (error) {
+    status.textContent = `Video rendering failed: ${error.message}`;
+    button.disabled = false;
+  }
+});
+
+loadImages().then(() => drawAt(0.7)).catch(error => {
+  status.textContent = `Could not prepare screenshots: ${error.message}`;
+});
+</script>
