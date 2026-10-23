@@ -1,6 +1,6 @@
 # Cloudwise — pitch and demo kit
 
-This file contains project-specific slide copy and a short demo script for completing the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). Replace the template's placeholder copy with the text below and add screenshots from the working app. Keep the visible unofficial notice in the presentation.
+This file contains project-specific slide copy and a short demo script. A ready-to-present browser deck is available in [`pitch-deck.html`](./pitch-deck.html). To use the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi), replace its placeholder copy with the text below and add screenshots from the working app. Keep the visible unofficial notice in the presentation.
 
 ## Slide 1 — Cover
 
@@ -81,7 +81,8 @@ Unofficial, independent AZ-900 learning tool · Not affiliated with Microsoft.
 ## Submission checklist
 
 - [ ] Push the app and documentation to the requested GitHub repository.
-- [ ] Replace the placeholder content in the supplied Canva template with the slide copy above.
+- [ ] Sign in to Canva and make a copy of the supplied template before editing it.
+- [ ] Replace the placeholder content in that Canva copy with the slide copy above.
 - [ ] Add current screenshots from the running app to the product-demo slide.
 - [ ] Confirm the presentation's unofficial notice is visible.
 - [ ] Submit the repository and presentation link through the PLP hackathon submission form.

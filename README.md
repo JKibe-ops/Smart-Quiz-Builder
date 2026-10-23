@@ -48,7 +48,9 @@ Questions were checked against the public outline and Microsoft Learn service do
 
 ## Hackathon presentation
 
-Use the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi) with the slide-by-slide copy and demo plan in [`PITCH.md`](./PITCH.md). Replace any template placeholders with the Cloudwise project name and pitch text before presenting.
+Open the ready-to-present [Cloudwise pitch deck](./pitch-deck.html) in a browser. Navigate with the arrow keys or on-screen controls; use **Print / PDF** to print or save it as a PDF. The full slide copy and speaking notes are in [`PITCH.md`](./PITCH.md).
+
+The supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi) is also linked in `PITCH.md`; use the slide copy there to transfer this presentation into your Canva account.
 
 ## License
 
