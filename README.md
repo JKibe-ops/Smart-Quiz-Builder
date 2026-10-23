@@ -40,6 +40,7 @@ Questions were checked against the public outline and Microsoft Learn service do
 - `questions.js` — topic definitions and original quiz content
 - `app.js` — practice flow, feedback, scoring, and local progress
 - `PITCH.md` — demo flow, pitch narrative, and Canva-ready slide copy
+- `assets/` — captured app screenshots used in the pitch presentation
 
 ## Public references
 
@@ -50,7 +51,7 @@ Questions were checked against the public outline and Microsoft Learn service do
 
 Open the ready-to-present [Cloudwise pitch deck](./pitch-deck.html) in a browser. Navigate with the arrow keys or on-screen controls; use **Print / PDF** to print or save it as a PDF. The full slide copy and speaking notes are in [`PITCH.md`](./PITCH.md).
 
-The project presentation is also available as an [editable Canva copy](https://www.canva.com/design/DAHY2YOfmsw/oveScBMGzqMs7bOJ_1kW2Q/edit), made from the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). The copy has nine project-focused slides. Add app screenshots and personalize the speaking notes before submitting.
+The project presentation is also available as an [editable Canva copy](https://www.canva.com/design/DAHY2YOfmsw/oveScBMGzqMs7bOJ_1kW2Q/edit), made from the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). The nine-slide copy includes real app screenshots of the overview and instant answer feedback. Captured images are also in `assets/`.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Cloudwise — pitch and demo kit
 
-This file contains project-specific slide copy and a short demo script. A ready-to-present browser deck is available in [`pitch-deck.html`](./pitch-deck.html). The editable [Cloudwise Canva presentation](https://www.canva.com/design/DAHY2YOfmsw/oveScBMGzqMs7bOJ_1kW2Q/edit) is a nine-slide copy of the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). Add screenshots from the working app and personalize the speaking notes before submitting. Keep the visible unofficial notice in the presentation.
+This file contains project-specific slide copy and a short demo script. A ready-to-present browser deck is available in [`pitch-deck.html`](./pitch-deck.html). The editable [Cloudwise Canva presentation](https://www.canva.com/design/DAHY2YOfmsw/oveScBMGzqMs7bOJ_1kW2Q/edit) is a nine-slide copy of the supplied [PLP Canva presentation template](https://canva.link/os6usknbpkr6vmi). It includes captured app screenshots of the overview and answer feedback; the image files are in [`assets/`](./assets/). Keep the visible unofficial notice in the presentation.
 
 ## Slide 1 — Cover
 
@@ -66,13 +66,15 @@ Original questions, instant explanations, and topic progress turn practice into 
 
 ## 60-second speaking notes
 
-"The moment that inspired Cloudwise was [add a real example from your own AZ-900 preparation: a concept that confused you, an answer you wanted explained, or a study tool you wished you had]. Cloudwise is a small, friendly practice space for people preparing for AZ-900. Learners choose one of the three public skills areas, answer original questions, and immediately see a plain-language explanation for every choice. Their progress is saved on their own device and summarized by topic, so they can choose what to practice next. The app is intentionally lightweight: no login, no server, and no copied exam items. We can grow it with more reviewed questions and bring the same explain-first learning loop to other certifications. Cloudwise helps the next learner turn practice into understanding."
+"One AZ-900 learning moment in Cloudwise starts with a Nairobi startup that pays only for the cloud resources it uses. The feedback connects that scenario to consumption-based pricing and the shift from capital expenditure to operating expenditure. Instead of seeing only which option is correct, a learner gets the reason behind it. Cloudwise is a friendly practice space for people preparing for AZ-900: choose one of the three public skills areas, answer original questions, and get a plain-language explanation right away. Progress stays on the learner's device and is summarized by topic, helping them choose what to practice next. There is no login, no server, and no copied exam content. The same explain-first loop can grow to other beginner certifications. Cloudwise helps learners turn practice into understanding."
+
+The opening is a worked example from an original Cloudwise question, not a claim about the presenter's personal exam-preparation history.
 
 ## Submission checklist
 
 - [x] Push the app and documentation to the requested GitHub repository.
 - [x] Create and edit a nine-slide Canva copy of the supplied template.
-- [ ] Add current screenshots from the running app to the Canva presentation.
-- [ ] Replace the bracketed personal-experience prompt in the speaking notes with a true moment from your own AZ-900 preparation.
+- [x] Add current screenshots from the running app to the Canva presentation and repository.
+- [x] Replace the speaking-note placeholder with a concrete AZ-900 learning moment from an original app question and explanation.
 - [x] Confirm the presentation's unofficial notice is visible.
 - [ ] Submit the repository and presentation link through the PLP hackathon submission form.
